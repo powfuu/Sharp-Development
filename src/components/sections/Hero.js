@@ -5,7 +5,7 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
-
+import $ from 'jquery';
 const propTypes = {
   ...SectionProps.types
 }
@@ -61,19 +61,20 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              Landing template for <span className="text-color-primary">startups</span>
+              We're Professionals <span className="text-color-primary">Developers</span>
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.
+                Our company has around 200+ professionals developers with 6+ years experience, we create your business project as soon as possible!
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
-                <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="https://cruip.com/">
-                    Get started
-                    </Button>
-                  <Button tag="a" color="dark" wideMobile href="https://github.com/cruip/open-react-template/">
-                    View on Github
+                <ButtonGroup onClick={()=>{
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop:9991}, 800, 'swing', function() { 
+                    });
+                  }}>
+                  <Button tag="a" color="primary" wideMobile>
+                    Contact Us
                     </Button>
                 </ButtonGroup>
               </div>
@@ -86,20 +87,9 @@ const Hero = ({
               aria-controls="video-modal"
               onClick={openModal}
             >
-              <Image
-                className="has-shadow"
-                src={require('./../../assets/images/video-placeholder.jpg')}
-                alt="Hero"
-                width={896}
-                height={504} />
+<iframe id='video' src="https://www.youtube.com/embed/bWdeGTJxMQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </a>
           </div>
-          <Modal
-            id="video-modal"
-            show={videoModalActive}
-            handleClose={closeModal}
-            video="https://player.vimeo.com/video/174002812"
-            videoTag="iframe" />
         </div>
       </div>
     </section>

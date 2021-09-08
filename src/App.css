@@ -1,0 +1,35 @@
+*::-webkit-scrollbar {
+    width: 5px !important;
+  }
+  *::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 160, 160) !important;
+  border-radius: 12px !important;
+  }
+  #video{
+    height: 500px;
+    width: 800px !important;
+    border-radius: 8px;
+  }
+  @media screen and (max-width:800px){
+    #video{
+      width: 600px !important;
+    }
+  }
+  @media screen and (max-width:600px){
+    #video{
+      width: 400px !important;
+    }
+  }
+  @media screen and (max-width:499px){
+    #video{
+      width: 350px !important;
+    }
+  }
+  a{
+    cursor:default !important;
+  }
+  #sendit{
+    cursor: pointer !important;
+    margin-top:.5em;
+    float:right;
+  }

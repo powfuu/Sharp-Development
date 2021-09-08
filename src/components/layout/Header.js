@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
-
+import $ from 'jquery'
 const propTypes = {
   navPosition: PropTypes.string,
   hideNav: PropTypes.bool,
@@ -112,7 +112,11 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Documentation</Link>
+                      <Link to="#0" onClick={()=>{
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop:1000}, 500, 'swing', function() { 
+                    });
+                  }}>What is Sharp Development?</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -120,7 +124,11 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
+                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={()=>{
+                    var body = $("html, body");
+                    body.stop().animate({scrollTop:9991}, 800, 'swing', function() { 
+                    });
+                  }}>Contact Us</Link>
                       </li>
                     </ul>}
                 </div>
